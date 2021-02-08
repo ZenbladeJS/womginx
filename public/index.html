@@ -1,44 +1,133 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="index.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="shortcut icon" type="image/png" href="logo.png" />
-    <title>NGINX Proxy</title>
-</head>
-
-<body>
-    <div class="container">
-        <img src="logo-full.png" width="250" height="250">
-        <div>
-            <script>
+<html>
+    <head>
+        <title>Google</title>
+        <link rel="icon" href="https://zentroidz.com/google-icon.png">
+        <style>
+            * {
+                padding: 0px;
+                margin: 0px;
+            }
+            *:focus {
+                outline: none;
+            }
+            #background {
+                background-image: url(https://zentroidz.com/blur.jpg);
+                background-size: 100% 100%;
+                background-repeat: no-repeat;
+                position: absolute;
+                left: 0px;
+                top: 0px;
+                width: 100%;
+                height: 100%;
+            }
+            #form-container-dummy {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                width: 700px;
+                height: 300px;
+                transform: translate(-50%, -50%);
+                background-color: #ffffff;
+                opacity: 0.1;
+                border-radius: 30px;
+                box-shadow: 0px 0px 10px;
+            }
+            #form-container {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                width: 700px;
+                height: 300px;
+                transform: translate(-50%, -50%);
+            }
+            #label {
+                position: absolute;
+                left: 50%;
+                top: 47.5%;
+                width: 50%;
+                height: 50%;
+                transform: translate(-50%, -50%);
+                font-family: Arial, sans-serif;
+                color: #5555ee;
+                text-align: center;
+            }
+            #form {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                width: 100%;
+                height: 100%;
+                transform: translate(-50%, -50%);
+            }
+            #input {
+                position: absolute;
+                left: 50%;
+                top: calc(70% - 20px);
+                width: 70%;
+                height: 40px;
+                transform: translate(-50%, -50%);
+                border-width: 0px;
+                border-top-left-radius: 30px;
+                border-top-right-radius: 30px;
+                text-align: center;
+            }
+            #submit {
+                position: absolute;
+                left: 50%;
+                top: calc(70% + 20px);
+                width: 70%;
+                height: 40px;
+                transform: translate(-50%, -50%);
+                border-width: 0px;
+                border-bottom-left-radius: 30px;
+                border-bottom-right-radius: 30px;
+                background-color: #5555ee;
+                color: #ffffff;
+                font-weight: 900;
+            }
+            @media (max-width:800px) {
+                #form-container-dummy {
+                    width: 90%;
+                }
+                #form-container {
+                    width: 90%;
+                }
+            }
+            @media (max-height:340px) {
+                #form-container-dummy {
+                    height: 90%;
+                }
+                #form-container {
+                    height: 90%;
+                }
+            }
+        </style>
+    </head>
+    <body data-new-gr-c-s-check-loaded="14.993.0" data-gr-ext-installed="">
+        <div id="background"></div>
+        <div id="form-container-dummy"></div>
+    	<div id="form-container">
+    	    <h1 id="label">Hackeralert's<br>Proxy</h1>
+    		<form id="form" action="javascript:go();" style="margin-bottom:0;">
+    			<input id="input" name="url" type="text" autocomplete="off" value="https://www.google.com" placeholder="http://example.com">
+    			<input id="submit" type="submit" value="Proxify">
+    		</form>
+    		
+    		<script type="text/javascript">
+    		    var inputId = document.getElementById("input");
+    			inputId.focus();
+    			inputId.selectionStart = inputId.selectionEnd = inputId.value.length;
                 function go() {
-                    var input = document.getElementById('url-target');
+                    var input = document.getElementById('input');
                     if (input.value) {
                         window.open('/main/' + input.value);
                     } else {
                         alert('Please provide a link. It does not require https://.');
                     }
                 }
-            </script>
-            <span class="w3-xlarge">Input your URL here: </span>
-            <div>
-                <input class="w3-xlarge" type='text' placeholder='https://www.google.com' id='url-target'
-                    onkeydown='if(event.key==="Enter") go()' />
-                <button onclick='go()' class="w3-xlarge">Go!</button>
-            </div>
-            <br>
-            <br>
-            </p>
-            <p class="w3-medium">View GitHub source <a class="w3-medium" href="https://github.com/binary-person/womginx">here</a></p>
-        </div>
-    </div>
-</body>
-
+    		</script>
+    	</div>
+    
+    </body>
 </html>
